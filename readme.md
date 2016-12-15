@@ -26,7 +26,7 @@ You will need PHP and [composer](https://getcomposer.org).
 
 4. Connect to `http://localhost:8000`
 
-Info about the repository: we have added a database/database.sqlite file to this
+Info about the repository: we have added a `database/database.sqlite` file to this
 repo, so some sample data is already inside. By completing the tasks you can
 choose to either add the modified database.sqlite file to the commit or omit it.
 
@@ -38,22 +38,23 @@ Hints:
 
 _This task evaluates familiarity with MVC frameworks and Laravel_
 
-The application allows creating new posts. Please add validation so that it is
-impossible to create posts with description longer than 255 characters.
+The application allows creating new posts. In `localhost:8000/post/create` page, add
+validation so that it is impossible to create posts with description longer than 255 characters.
 
 Hints:
-* file `/app/Http/Controllers/PostController.php`
-* file `/resources/views/post/create.blade.php`
+* contreller file `/app/Http/Controllers/PostController.php`
+* view file `/resources/views/post/create.blade.php`
+* model files `/app/Post.php`
 * [Laravel Validation](https://laravel.com/docs/5.3/validation)
 
 ## Task 2: Unique Post Titles
 
-When creating new post, check if post with such title already exists and prevent
+When creating new post in `localhost:8000/post/create`, check if post with such title already exists and prevent
 creating a duplicate.
 
 ## Task 3: Editing Posts
 
-When opening a post, there is functionality to edit it. Please make sure that the
+When opening a post, there is functionality to edit it (`localhost:8000/post/1/edit`). Please make sure that the
 same validation created in Task 1 and 2 is also used when editing.
 
 Hints:
@@ -61,15 +62,15 @@ Hints:
 
 ## Task 4: Create Possibility to Delete Posts
 
-Create possibility to delete post from the post list view.
+Create possibility to delete post from the post list view `localhost:8000/post`.
 
 ## Task 5: Display Creation Date in Post List
 
-In post list view display creation and last update date next to each post.
+In post list view `localhost:8000/post`, display creation and last update date next to each post.
 
 ## Task 6: Block Commenters
 
-Under each post, a list of comments is displayed. Add a "block this person"
+Under each post, a list of comments is displayed (`localhost:8000/post/1`). Add a "block this person"
 button next to each comment. The button should delete all comments from
 database with the same email.
 
