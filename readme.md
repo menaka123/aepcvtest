@@ -22,7 +22,7 @@ You will need PHP and [composer](https://getcomposer.org).
 
 2. Run `composer install`
 
-3. Run `php artisan --serve`
+3. Run `php artisan serve`
 
 4. Connect to `http://localhost:8000`
 
