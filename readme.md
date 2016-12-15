@@ -112,7 +112,7 @@ Hints:
   but other means of creating the table are also ok, if the database.sqlite file
   will be committed for review.
 
-## Task 10: 
+## Task 10: Add a JavaScript Framework
 
 _This task evaluates familiarity with modern JavaScript_
 
@@ -123,3 +123,18 @@ Examples include (but are not limited to), showing a "edit post" popup with JSON
 posting in the `/post/1` window instead of separate view `/post/1/edit`
 
 You can also do something with jQuery, but that will not be counted as full point.
+
+## Task 11: Statistics Dashboard
+
+_This task evaluates understanding of project and creative thinking_
+
+Create a new "dashboard" page with various statistics about posts and comments. The
+statistics can be picked freely from your own ideas on what else might be needed.
+
+## Task 12:
+
+_This task is a possibility to display any other skills and technology passions of the applicant_
+
+You are free to add any other functionality as a demo of your skills.
+
+This will be benefitial to differentiade yourself from others and can definetley score extra points.
