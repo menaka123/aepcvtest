@@ -8,7 +8,7 @@ of them can have multiple comments.
 
 To get your qualification, you must complete the tasks listed below.
 
-The tasks are in English to evaluate language comprehention skills.
+The tasks are in English to evaluate language comprehension skills.
 
 You can either just send in the completed project as a ZIP, or [fork this project](https://help.github.com/articles/fork-a-repo/) on GitHub and create a pull request.
 
@@ -22,13 +22,13 @@ You will need PHP and [composer](https://getcomposer.org).
 
 2. Run `composer install`
 
-3. Run `php artisan --sevre`
+3. Run `php artisan --serve`
 
 4. Connect to `http://localhost:8000`
 
 Info about the repository: we have added a `database/database.sqlite` file to this
-repo, so some sample data is already inside. By completing the tasks you can
-choose to either add the modified database.sqlite file to the commit or omit it.
+repo, so some sample data is already inside. By completing the tasks, you can
+choose to either add the modified `database.sqlite` file to the commit or omit it.
 
 Hints:
 * [Laravel Documentation](https://laravel.com/docs/5.3)
@@ -42,7 +42,7 @@ The application allows creating new posts. In `localhost:8000/post/create` page,
 validation so that it is impossible to create posts with description longer than 255 characters.
 
 Hints:
-* contreller file `/app/Http/Controllers/PostController.php`
+* controller file `/app/Http/Controllers/PostController.php`
 * view file `/resources/views/post/create.blade.php`
 * model files `/app/Post.php`
 * [Laravel Validation](https://laravel.com/docs/5.3/validation)
@@ -104,22 +104,22 @@ You need to:
 * Create the new table
 * When blocking commenter (functionality from task 6) add the email to the new
   table.
-* When postin a new comment, check if the provided email is not in blocked
+* When posting a new comment, check if the provided email is not in blocked
   commenters table.
 
 Hints:
 * [Laravel Migrations](https://laravel.com/docs/5.3/migrations) are highly recommended,
   but other means of creating the table are also ok, if the database.sqlite file
-  will be commited for review.
+  will be committed for review.
 
 ## Task 10: 
 
-_This task evaluates familiarity with modern Javascript_
+_This task evaluates familiarity with modern JavaScript_
 
-Convert one or more pages by adding Javascript functionality using
+Convert one or more pages by adding JavaScript functionality using
 ([React](https://facebook.github.io/react/), [Vue](https://vuejs.org), or any other)
 
-Examples include (but are not limited to), showing a "edit post" popup with json data
+Examples include (but are not limited to), showing a "edit post" popup with JSON data
 posting in the `/post/1` window instead of separate view `/post/1/edit`
 
 You can also do something with jQuery, but that will not be counted as full point.
