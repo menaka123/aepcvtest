@@ -10,9 +10,9 @@ To get your qualification, you must complete the tasks listed below.
 
 The tasks are in English to evaluate language comprehension skills.
 
-You can either just send in the completed project as a ZIP to it@aepartner.lv, or [fork this project](https://help.github.com/articles/fork-a-repo/) on GitHub and create a pull request.
+You can either just send in the completed project as a ZIP to it@aepartner.lv, or [fork this project](https://help.github.com/articles/fork-a-repo/) on GitHub. Creating pull requests is a nice idea, but that would make your code more public.
 
-If you are qualifying for a vacant programmer position and have reached this repo via a link from human resources, we also do code review on pull requests, just mention that you would like code review in the PR, or send mail to it@aepartner.lv.
+If you are qualifying for a vacant programmer position and have reached this repo via a link from human resources, we also do code review, just mention that you would like code review and a link to your forked repository, in a mail to it@aepartner.lv.
 
 ## Task 0: Installing
 
