@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::resource('post', 'PostController');
 Route::resource('post.comment', 'CommentController');
+Route::delete('post/comment/delete-all/{id}/{post_id}', 'CommentController@deleteAll');
+

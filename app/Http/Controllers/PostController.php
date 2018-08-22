@@ -38,8 +38,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'text' => 'required',
+            'title' => 'required|unique:posts',
+            'text' => 'required|max:255',
         ]);
         $post = new Post;
         $post->title = $request->title;
@@ -82,6 +82,12 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => ($post->title === $request->title ? 'required' : 'required|unique:posts') ,
+            'text' => 'required|max:255',
+        ]);
+
         $post->title = $request->title;
         $post->text = $request->text;
         $post->save();
@@ -97,5 +103,10 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 }

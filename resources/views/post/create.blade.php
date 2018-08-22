@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <h1>Jauna ieraksta izveidošana</h1>
 
  {{ method_field('PUT') }}
@@ -14,14 +18,18 @@
 
 <form action="{{ action('PostController@store') }}" method="post">
     {{ csrf_field() }}
-    <p>
-        <label>Ieraksta virsraksts <input type="text" name="title" value="{{ old('title') }}"></label>
-    </p>
-    <p>
-        <label>Ieraksta teksts
-            <textarea name="text">{{ old('text') }}</textarea>
-        </label>
-    </p>
-    <p><input type="submit" value="Izveidot"></p>
+
+    <div class="form-group">
+        <label for="title"> Ieraksta virsraksts </label>
+        <input id="title" class="form-control" type="text" name="title" value="{{ old('title') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="text"> Ieraksta teksts </label>
+        <textarea id="text" class="form-control" name="text">{{ old('text') }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Izveidot</button>
+
 </form>
-    
+
+@endsection

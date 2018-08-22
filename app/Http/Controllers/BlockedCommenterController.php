@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use App\Comment;
 
-class CommentController extends Controller
+class BlockedCommenterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($postId)
+    public function index()
     {
         //
     }
@@ -34,29 +32,9 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $postId)
+    public function store(Request $request)
     {
-        $post = Post::findOrFail($postId);
-
-        $comment = new Comment;
-        $comment->email = $request->email;
-        $comment->comment = $request->comment;
-        $post->comments()->save($comment);
-
-        return redirect()->action('PostController@show', $post);
-    }
-
-
-    //delete all comments by email
-    public function deleteAll($id, $post_id)
-    {
-
-        $post = Post::findOrFail($post_id);
-        $comment = Comment::findOrFail($id);
-
-        $affected = Comment::where('email', '=', $comment->email )->delete();
-
-        return redirect()->action('PostController@show', $post);
+        //
     }
 
     /**
@@ -102,8 +80,5 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
-        dd($id);
-
-        return redirect()->action('PostController@show');
     }
 }
