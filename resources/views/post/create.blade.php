@@ -6,7 +6,7 @@
 
  {{ method_field('PUT') }}
 
- @if (count($errors) > 0)
+@if (count($errors) > 0)
     <h2>Jūsu ievadītajos datos bija nepilnības</h2>
     <ul>
         @foreach ($errors->all() as $error)

@@ -2,17 +2,15 @@
 
 @section('content')
 
-<h1>Dienasgrāmatas ieraksts {{ $post->id }}</h1>
+    <post-details :post-data-val="{{ json_encode($post) }}" :connect-data="'{{ csrf_token() }}'"></post-details>
 
-<h2>{{ $post->title }}</h2>
-<p>{{ $post->text }}</p>
 
-<p><a href="{{ action('PostController@edit', $post) }}">Labot šo ierakstu</a></p>
+
 
 <h1>Komentāri</h1>
-<ul>
+<ul class="list-group">
     @foreach($post->comments as $comment)
-        <li>
+        <li class="list-group-item">
             Autors: {{ $comment->email }}
             Datums: {{ $comment->created_at }}<br>
             {{ $comment->comment }}
@@ -25,6 +23,16 @@
         </li>
     @endforeach
 </ul>
+
+@if (count($errors) > 0)
+    <h2>Jūsu ievadītajos datos bija nepilnības</h2>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
+
 <form action="{{ action('CommentController@store', $post) }}" method="post">
     <h2>Komentēt</h2>
     {{ csrf_field() }}
@@ -42,4 +50,10 @@
     <button type="submit" class="btn btn-primary">Komentēt</button>
 
 </form>
+
+
+
 @endsection
+
+
+

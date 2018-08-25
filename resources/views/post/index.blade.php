@@ -2,9 +2,9 @@
 
 @section('content')
 
-<ul>
+<ul class="list-group">
     @foreach ($posts as $post)
-        <li><a href="{{ action('PostController@show', $post) }}">{{ $post->id }}: {{ $post->title }}</a>
+        <li class="list-group-item"><a href="{{ action('PostController@show', $post) }}">{{ $post->id }}: {{ $post->title }}</a>
                 <form action="{{ action('PostController@destroy', $post) }}" method="post">
                         Created : {{ $post->created_at }} |
                         Updated : {{ $post->updated_at }} <br>

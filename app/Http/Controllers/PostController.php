@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -81,17 +82,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $post = Post::findOrFail($id);
 
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'title' => ($post->title === $request->title ? 'required' : 'required|unique:posts') ,
             'text' => 'required|max:255',
         ]);
 
+        if ($validator->fails()) {
+
+            return json_encode(['errors'=>$validator->errors()]);
+        }
+
         $post->title = $request->title;
         $post->text = $request->text;
         $post->save();
-        return redirect()->action('PostController@show', $post);
+
+        return json_encode($post);
     }
 
     /**

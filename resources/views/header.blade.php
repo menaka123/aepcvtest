@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Post site </title>
 </head>
 <body>
@@ -19,12 +19,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::path() == 'post' ? 'active' : '' }}">
                 <a class="nav-link" href="/post">Home <span class="sr-only">(current)</span></a>
             </li>
-          {{--  <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>--}}
+            <li class="nav-item {{ Request::path() == 'dash' ? 'active' : '' }}">
+                <a class="nav-link" href="/dash">Dashboard</a>
+            </li>
 
         </ul>
     </div>

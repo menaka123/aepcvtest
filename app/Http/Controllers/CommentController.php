@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlockedCommenter;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
@@ -38,6 +39,12 @@ class CommentController extends Controller
     {
         $post = Post::findOrFail($postId);
 
+        if(BlockedCommenter::where('email', $request->email)->first()){
+
+            return back()->withErrors('You have been blocked from commenting!!');
+        }
+
+
         $comment = new Comment;
         $comment->email = $request->email;
         $comment->comment = $request->comment;
@@ -53,8 +60,11 @@ class CommentController extends Controller
 
         $post = Post::findOrFail($post_id);
         $comment = Comment::findOrFail($id);
-
         $affected = Comment::where('email', '=', $comment->email )->delete();
+
+        $blocked = new BlockedCommenter;
+        $blocked->email = $comment->email;
+        $blocked->save();
 
         return redirect()->action('PostController@show', $post);
     }
